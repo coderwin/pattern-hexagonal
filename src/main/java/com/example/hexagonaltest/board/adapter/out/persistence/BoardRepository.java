@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *      -> outer에 위치
  */
 public interface BoardRepository extends JpaRepository<BoardEntity, Long> {
+
 }

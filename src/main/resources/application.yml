@@ -4,3 +4,32 @@ server:
 spring:
   application:
     name: hexagonal-test
+
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:xe
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: boardhexagonaltest
+    password: boardhexagonaltest
+
+  # jpa에 관련된 설정
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    open-in-view: false
+
+    # ***.sql 파일 실팽시키기 위한 속성
+    defer-datasource-initialization: true
+
+#jpa log
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type.descriptor.sql: trace
