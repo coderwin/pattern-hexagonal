@@ -2,6 +2,7 @@ package com.example.hexagonaltest.board.adapter.out.persistence;
 
 import com.example.hexagonaltest.board.adapter.in.web.dto.BoardInputDTO;
 import com.example.hexagonaltest.board.domain.Board;
+import com.example.hexagonaltest.board.domain.BoardListDetailResponseDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +31,14 @@ public class BoardMapper {
         ModelMapper mapper = new ModelMapper();
         BoardResponseDTO board = mapper.map(entity, BoardResponseDTO.class);
         return board;
+    }
+
+    public BoardListDetailResponseDTO boardEntityToBoardListDetailResponseDTO(BoardEntity boardEntity) {
+
+        ModelMapper mapper = new ModelMapper();
+        BoardListDetailResponseDTO boardListDetailResponseDTO = mapper.map(boardEntity, BoardListDetailResponseDTO.class);
+        return boardListDetailResponseDTO;
+
     }
 
 
