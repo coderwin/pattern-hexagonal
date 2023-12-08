@@ -4,10 +4,9 @@ import com.example.hexagonaltest.cart.application.port.out.CartDetailListOutPort
 import com.example.hexagonaltest.cart.common.CartWebOutAdapter;
 import com.example.hexagonaltest.cart.domain.CartDomainDetailListResponseDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -16,7 +15,7 @@ import static java.util.stream.Collectors.toList;
  *       -> DB에 데이터를 요청한다.
  */
 @RequiredArgsConstructor
-@Service
+@Component
 @CartWebOutAdapter(value = {"asdf", "asdf"})
 public class CartDetailListOutAdapter implements CartDetailListOutPort {
 
