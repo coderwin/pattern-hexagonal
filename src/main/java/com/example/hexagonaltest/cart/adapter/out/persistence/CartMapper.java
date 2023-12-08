@@ -1,0 +1,26 @@
+package com.example.hexagonaltest.cart.adapter.out.persistence;
+
+import com.example.hexagonaltest.cart.domain.CartDomainCreateRequestDTO;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
+
+/**
+ * 기능 : domain dto를 entity로 바꾸거나
+ *       enityt를 domain dto로 바꾼다.
+ */
+@Component
+public class CartMapper {
+
+    /**
+     * 설명 : CartDomainCreateRequestDTO -> Cart 로 변경한다.
+     * @param request
+     * @return
+     */
+
+    public Cart cartDomainCreateRequestDtoToCart(CartDomainCreateRequestDTO request) {
+
+        ModelMapper mapper = new ModelMapper();
+        Cart cart = mapper.map(request, Cart.class);
+        return cart;
+    }
+}
