@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Indexed
 public @interface CartWebOutAdapter {
 
-    String value() default "";
+    String[] value() default "";
 }

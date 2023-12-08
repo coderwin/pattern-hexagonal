@@ -2,6 +2,7 @@ package com.example.hexagonaltest.cart.adapter.out.persistence;
 
 import com.example.hexagonaltest.cart.adapter.in.web.dto.CartDetailResponseDTO;
 import com.example.hexagonaltest.cart.domain.CartDomainCreateRequestDTO;
+import com.example.hexagonaltest.cart.domain.CartDomainDetailListResponseDTO;
 import com.example.hexagonaltest.cart.domain.CartDomainDetailResponseDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -35,5 +36,16 @@ public class CartMapper {
         ModelMapper mapper = new ModelMapper();
         CartDomainDetailResponseDTO cartDomainDetailResponseDto = mapper.map(cart, CartDomainDetailResponseDTO.class);
         return cartDomainDetailResponseDto;
+    }
+
+    /**
+     * 기능 : Cart -> CartDomainDetailListResponseDTO(VO)로 변경한다.
+     * @param cart
+     * @return
+     */
+    public CartDomainDetailListResponseDTO cartToCartDomainDetailListResponseDto(Cart cart) {
+
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(cart, CartDomainDetailListResponseDTO.class);
     }
 }
