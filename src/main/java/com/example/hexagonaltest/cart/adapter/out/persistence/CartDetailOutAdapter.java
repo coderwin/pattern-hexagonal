@@ -1,18 +1,17 @@
 package com.example.hexagonaltest.cart.adapter.out.persistence;
 
-import com.example.hexagonaltest.cart.adapter.in.web.dto.CartDetailResponseDTO;
 import com.example.hexagonaltest.cart.application.port.out.CartDetailOutPort;
 import com.example.hexagonaltest.cart.common.CartWebOutAdapter;
 import com.example.hexagonaltest.cart.domain.CartDomainDetailResponseDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * 기능 : db 데이터를 조회합니다.
  *       ->
  */
 @RequiredArgsConstructor
-@Service
+@Component
 @CartWebOutAdapter
 public class CartDetailOutAdapter implements CartDetailOutPort {
 
