@@ -8,12 +8,14 @@ import com.example.hexagonaltest.cart.domain.CartDomainDetailResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 설명 : cart 상세조회 in port
  *      -> domain 데이터로 변경합니다.
  *      -> out Port를 요청합니다.
  */
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
 @CartWebInPort
