@@ -3,6 +3,8 @@ package com.example.hexagonaltest.board.adapter.in.web;
 import com.example.hexagonaltest.board.adapter.in.web.dto.BoardInputDTO;
 import com.example.hexagonaltest.board.application.usecase.BoardCreateUseCase;
 import com.example.hexagonaltest.common.WebInAdapter;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +24,11 @@ public class BoardController {
 
     private final BoardCreateUseCase boardCreateUseCase;
 
+    @Operation(
+            summary = "게시글 등록",
+            description = "writer, title을 등록할 수 있습니다.",
+            tags = {"CartDetailInAdapter"}
+    )
     @PostMapping
     public void create(@RequestBody BoardInputDTO boardInputDTO) {
 
