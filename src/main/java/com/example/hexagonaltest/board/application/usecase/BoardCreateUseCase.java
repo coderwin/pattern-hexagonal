@@ -1,6 +1,7 @@
 package com.example.hexagonaltest.board.application.usecase;
 
 import com.example.hexagonaltest.board.adapter.in.web.dto.BoardInputDTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * 설명 : BoardCreateUseCase
