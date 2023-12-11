@@ -3,6 +3,7 @@ package com.example.hexagonaltest.cart.adapter.in.web;
 import com.example.hexagonaltest.cart.adapter.in.web.dto.CartCreateRequestDTO;
 import com.example.hexagonaltest.cart.application.usecase.CartCreateUseCase;
 import com.example.hexagonaltest.cart.common.CartWebInAdapter;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ public class CartCreateInAdapter {
      * 기능 : 상품 담기(생성)
      * @param request
      */
+    @Operation(summary = "장바구니 상품 정보 등록", description = "장바구니 상품번호, 주문자번호 입력 => 등록")
     @PostMapping
     public ResponseEntity<Void> create(@RequestBody CartCreateRequestDTO request) {
 
